@@ -15,7 +15,6 @@ json.forEach(it => {
   const time = firstTime - new Date(it.timestamp).getTime();
   const minute = ((time % 60000) - time) / 60000;
   
-  console.log(minute);
   result[minute]++;
 });
 
