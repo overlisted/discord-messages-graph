@@ -1,9 +1,8 @@
 # discord-messages-graph
 A simple script that makes json data for a graph using discord messages.
 
-### Fetching messages
-Execute this API method on Discord multiple times to fetch all messages of a channel: https://discord.com/developers/docs/resources/channel#get-channel-messages
-
-### To do
-- Write a better README
-- Add message fetcher as a submodule
+### Usage
+- Fetch message history using [this repository](https://github.com/overlisted/discord-messages-fetch);
+- Copy the messages.json here;
+- Run this script using command "node index.js";
+- Enjoy your graph data (IDK if it can be used by any graph renderer)
