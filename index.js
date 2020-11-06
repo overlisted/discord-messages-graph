@@ -31,6 +31,7 @@ json.forEach(it => {
 
 const result = {
   unit: "messages",
+  since: firstTime,
   timeUnit: timeUnit,
   data: data
 };
