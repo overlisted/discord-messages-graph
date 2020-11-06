@@ -32,7 +32,7 @@ json.forEach(it => {
 const result = {
   unit: "messages",
   since: firstTime,
-  timeUnit: timeUnit,
+  step: enumTimeUnit[timeUnit],
   data: data
 };
 
