@@ -1,5 +1,5 @@
 # discord-messages-graph
-A simple script that makes json data for a graph using discord messages.
+A simple script that makes data for a graph from Discord messages
 
 ### Usage
 - Fetch message history using [this repository](https://github.com/overlisted/discord-messages-fetch);
