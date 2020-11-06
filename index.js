@@ -1,18 +1,22 @@
 const fs = require("fs");
 
 const json = JSON.parse(fs.readFileSync("messages.json"));
-const subresult = [];
-
-const startTime = new Date(json[0].timestamp).getTime();
-json.forEach(it => {
-  const time = startTime - new Date(it.timestamp).getTime();
-  const minute = (time - (time % 60000)) / 60000;
-  
-  if(!subresult[minute]) subresult[minute] = 0;
-  subresult[minute]++;
-});
 
 const result = [];
-subresult.forEach((it, i)=> { if(it) result.push({minute: i, messages: it}) })
+
+const firstTime = new Date(json[json.length - 1].timestamp).getTime();
+const lastTime = new Date(json[0].timestamp).getTime();
+
+// prepare the results array
+for(let i = firstTime; i < lastTime; i += 60000) result.push(0);
+
+// calculate actual results data
+json.forEach(it => {
+  const time = firstTime - new Date(it.timestamp).getTime();
+  const minute = ((time % 60000) - time) / 60000;
+  
+  console.log(minute);
+  result[minute]++;
+});
 
 fs.writeFileSync("graph-data.json", JSON.stringify(result, null, 2));
